@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#include "game.h"
 void menu_text()
 {
     printf("******************************\n");
@@ -7,8 +6,31 @@ void menu_text()
     printf("**      2.退出游戏          **\n");
     printf("******************************\n");
 }
+
+void game_sanziqi()
+{
+    printf("三子棋游戏开始！\n");
+    char board[ROW][COL] = { 0 };
+    //初始化棋盘
+    InitBoard(board,ROW,COL);
+    DisplayBoard(board,ROW,COL);
+
+   while (1)
+   {
+     //玩家下棋
+    PlayerMore(board,ROW,COL);
+    DisplayBoard(board,ROW,COL);
+
+    //电脑下棋
+    ComputerMore(board,ROW,COL);
+    DisplayBoard(board,ROW,COL);
+   }
+   
+}
 int main()
 {
+    srand((unsigned int)time(NULL));//设置随机数的生成起点
+    
     int input=0;
     do
     {
@@ -18,7 +40,7 @@ int main()
         switch(input)
         {
             case 1:
-                printf("游戏开始！\n");
+                game_sanziqi();
                 break;
             case 2:
                 printf("退出游戏！\n");
@@ -28,7 +50,7 @@ int main()
                 break;
         }
     } while (input);
-    
+
     
     return 0;
 }
