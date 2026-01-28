@@ -9,6 +9,7 @@ void menu_text()
 
 void game_sanziqi()
 {
+    char ret = 0;
     printf("三子棋游戏开始！\n");
     char board[ROW][COL] = { 0 };
     //初始化棋盘
@@ -19,18 +20,46 @@ void game_sanziqi()
    {
      //玩家下棋
     PlayerMore(board,ROW,COL);
+    //判断玩家是否胜利
+    ret=IsWin(board,ROW,COL);
+    if (ret!='C')   
+    {
+        break;
+    }
+    
     DisplayBoard(board,ROW,COL);
 
     //电脑下棋
     ComputerMore(board,ROW,COL);
+    //判断电脑是否胜利
+    ret=IsWin(board,ROW,COL);
+    if (ret!='C')   
+    {
+        break;
+    }
     DisplayBoard(board,ROW,COL);
+
+    if(ret=='*')
+        {
+            printf("玩家胜利！\n");
+        }
+        else if(ret=='#')
+        {
+            printf("电脑胜利！\n");
+        }
+        else (ret=='Q')
+        {
+            printf("平局！\n");
+        }
+    DisplayBoard(board,ROW,COL);
+
    }
    
 }
 int main()
 {
     srand((unsigned int)time(NULL));//设置随机数的生成起点
-    
+
     int input=0;
     do
     {

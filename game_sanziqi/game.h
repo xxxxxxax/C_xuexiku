@@ -19,3 +19,7 @@ void PlayerMore(char board[ROW][COL], int row, int col);
 
 //电脑下棋
 void ComputerMore(char board[ROW][COL], int row, int col);
+
+//判断输赢
+//玩家赢 返回*，电脑赢返回#，平局返回Q，继续游戏返回C
+void IsWin(char board[ROW][COL], int row, int col);
