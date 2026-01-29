@@ -180,6 +180,10 @@ void ComputerMore(char borrad[ROW][COL], int row, int col)
 //	}
 //}
 #pragma endregion  // 折叠结束标记
+
+
+
+
 // 三子棋胜负判断函数
 // 形参board[ROW][COL]：棋盘数组  row/col：棋盘行列数（三子棋固定3）
 char IsWin(char board[ROW][COL], int row, int col)
