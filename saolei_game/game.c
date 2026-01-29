@@ -94,6 +94,9 @@ void SetMine(char board[ROWS][COLS], int row, int col)
 //                 {
 //                     for (j = y - 1; j <= y + 1; j++)
 //                     {
+//                     可选：排除自身，不加也不影响当前项目功能
+//                               if (i == x && j == y)
+//                                   continue;
 //                         if (mine_map[i][j] == '1')
 //                         {
 //                             count++;
@@ -131,7 +134,7 @@ int get_mine_court(char mine_map[ROWS][COLS], int x, int y)
     mine_map[x][y+1]+
     mine_map[x+1][y]+
     mine_map[x+1][y-1]+
-    mine_map[x+1][y+1]-8*'0';)          
+    mine_map[x+1][y+1]-8*'0');         
 }
 
 void FindMine(char mine_map[ROWS][COLS], char show_map[ROWS][COLS],int row, int col)

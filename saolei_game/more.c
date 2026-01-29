@@ -46,6 +46,7 @@ int main()
                 break;
             case 0:
                 printf("Exit Game\n") ;
+                break;
                 default:
                 printf("选择错误，请重新输入\n") ;
                 break;
