@@ -8,7 +8,7 @@
 
 #define ROWS ROW+2
 #define COLS COL+2
-#deefine EASY_COUNT 10
+#define EASY_COUNT 10
 
 void InitBoard(char board[ROWS][COLS], int rows, int cols, char set);
 

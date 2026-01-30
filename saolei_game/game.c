@@ -86,7 +86,7 @@ void SetMine(char board[ROWS][COLS], int row, int col)
 //             else
 //             {
 //                 //计算周围雷的数量
-//                 
+                
 //                 int count = 0;
 //                 int i = 0;
 //                 int j = 0;
